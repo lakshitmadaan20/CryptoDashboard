@@ -10,7 +10,7 @@ const Home = () => {
     const [search, setSearch] = useState('')
 
     const getData = () => {
-        const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=200&page=1&sparkline=true"
+        const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=true"
         setLoading(true)
         axios.get(url)
         .then(res => {

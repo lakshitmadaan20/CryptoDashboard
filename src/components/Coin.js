@@ -10,7 +10,6 @@ const Coin = ({image, name, symbol, price, volume, priceChange, id}) => {
                     <img src={image} alt="crypto" />
                     <h1>{name}</h1>
                     <p className="coin-symbol">{symbol}</p>
-                    {/* <p className="coin-symbol">{id}</p> */}
                 </div>
                 <div className="coin-data">
                     <p className="coin-price">Price: ₹{price.toLocaleString()}</p>
