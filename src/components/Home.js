@@ -14,7 +14,7 @@ const Home = () => {
         setLoading(true)
         axios.get(url)
         .then(res => {
-         console.log(res.data)
+        console.log(res.data)
         setCoinData(res.data)
         setLoading(false)
         })
@@ -22,7 +22,7 @@ const Home = () => {
     }
 
     useEffect(() => {
-       getData()
+       setInterval(getData() ,3000)
     }, [])
 
     const isLoading = () => {
@@ -48,12 +48,12 @@ const Home = () => {
         return (
             <div className="coin-app">
                 <div className="coin-search">
-                    <h1 className="coin-text">Search A Cryptocurrency</h1>
+                    <h1 className="coin-text">Top 100 Cryptocurrencies</h1>
                     <form>
                         <input
                             type="text"
                             required
-                            placeholder="Search Crypto By Name..."
+                            placeholder="Search Top 100 Crypto By Their Name..."
                             className="coin-input"
                             onChange={handleChange}
                         />

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+
 import NewsData from './NewsData';
 const cc = require("cryptocompare")
 cc.setApiKey("b1ea693d79e6f8b6d914d2a8a4afd0916244510823d8628147e8b74fd068b1e7")
@@ -20,7 +21,7 @@ const News = () => {
     }
 
     useEffect(() => {
-       getNews()
+       setInterval(getNews(),3000)
     }, [])
 
     const isLoading = () => {
@@ -37,7 +38,7 @@ const News = () => {
 
     return (
         <div className="container">
-            <h2 className="mt-4 text-center">Latest News</h2>
+            <h1 className="mt-4 text-center">Top 50 Latest News</h1>
             <hr/>
             {loading ? isLoading() : 
             <div className="row">
@@ -46,6 +47,7 @@ const News = () => {
                         <NewsData news={news} />
                     </div>
                 ))}
+                
             </div>}
         </div>
    )
