@@ -9,10 +9,10 @@ const Home = () => {
     const [loading, setLoading] = useState(false)
     const [search, setSearch] = useState('')
 
-    const getData = () => {
-        const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=true"
+    const getData = async() => {
+        const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=50&page=1&sparkline=true"
         setLoading(true)
-        axios.get(url)
+        await axios.get(url)
         .then(res => {
         console.log(res.data)
         setCoinData(res.data)
@@ -48,12 +48,12 @@ const Home = () => {
         return (
             <div className="coin-app">
                 <div className="coin-search">
-                    <h1 className="coin-text">Top 100 Cryptocurrencies</h1>
+                    <h1 className="coin-text">Top 50 Cryptocurrencies</h1>
                     <form>
                         <input
                             type="text"
                             required
-                            placeholder="Search Top 100 Crypto By Their Name..."
+                            placeholder="Search Top 50 Crypto By Their Name..."
                             className="coin-input"
                             onChange={handleChange}
                         />

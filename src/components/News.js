@@ -44,7 +44,7 @@ const News = () => {
             <div className="row">
                 {newsData.map((news, i) => (
                     <div key={i} className="col-4 mb-3">
-                        <NewsData news={news} />
+                        <NewsData news={news} i={i} />
                     </div>
                 ))}
                 

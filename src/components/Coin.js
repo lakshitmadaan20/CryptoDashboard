@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import './Coin.css'
 
-const Coin = ({image, name, symbol, price, volume, priceChange, id}) => {
+const Coin = ({ image, name, symbol, price, volume, priceChange, id }) => {
+    
+
     return (
         <div className="container">
             <div className="coin-row">
@@ -15,8 +17,8 @@ const Coin = ({image, name, symbol, price, volume, priceChange, id}) => {
                     <p className="coin-price">Price: ₹{price.toLocaleString()}</p>
                     <p className="coin-volume">volume: ₹{volume.toLocaleString()}</p>
                     {priceChange < 0 ? (
-                        <p className="coin-percent red">{priceChange.toFixed(2)}%</p>
-                    ) : (<p className="coin-percent green">+{priceChange.toFixed(2)}%</p>)}
+                        <p className="coin-percent red"> {priceChange.toFixed(2)}%</p>
+                    ) : (<p className="coin-percent green">+ {priceChange.toFixed(2)}%</p>)}
                     <p className="coin-price">
                         <Link className="btn btn-outline-primary" to={`/coindata/${id}`}>View Data</Link>   
                     </p>

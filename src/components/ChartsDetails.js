@@ -2,12 +2,14 @@ import React, { useRef, useEffect, useState } from "react";
 import Chartjs from "chart.js";
 import { historyOptions } from "./ChartConfig";
 
+
 const ChartsDetails = ({ data }) => {
     
     const chartRef = useRef();
     const { day, week, year, detail } = data;
     const [timeFormat, setTimeFormat] = useState("24h");
 
+   
     const determineTimeFormat = () => {
         switch (timeFormat) {
           case "24h":
@@ -19,9 +21,10 @@ const ChartsDetails = ({ data }) => {
           default:
             return day;
         }
-    };
+  };
+
     
-    useEffect(() => {
+  useEffect(() => {
         if (chartRef && chartRef.current && detail) {
           console.log("yeah");
           const chartInstance = new Chartjs(chartRef.current, {
@@ -44,24 +47,24 @@ const ChartsDetails = ({ data }) => {
        }
       });
     
-    const renderPrice = () => {
-        if (detail) {
-          return (
-            <>
-              <p className="my-0">INR {detail.current_price.toLocaleString()}</p>
-              <p
-                className={
-                  detail.price_change_24h < 0
-                    ? "text-danger my-0"
-                    : "text-success my-0"
-                }
-              >
-                {detail.price_change_percentage_24h.toFixed(2)}%
-              </p>
-            </>
-          );
-        }
-      };
+  const renderPrice = () => {
+    if (detail) {
+      return (
+        <>
+          <p className="my-0">INR {detail.current_price ? detail.current_price.toLocaleString() : "Not Available"}</p>
+          <p
+            className={
+              detail.price_change_24h < 0
+                ? "text-danger my-0"
+                : "text-success my-0"
+            }
+          >
+            {detail.price_change_percentage_24h ? detail.price_change_percentage_24h.toFixed(2) : "Not Available"}%
+          </p>
+        </>
+      );
+    } 
+  };
 
       return (
         <div className="border mt-2 rounded p-3">
@@ -70,7 +73,6 @@ const ChartsDetails = ({ data }) => {
             <canvas ref={chartRef} id="myChart" width={300} height={300}></canvas>
           </div>
 
-    
     
           <div className="chart-button mt-1">
             <button
