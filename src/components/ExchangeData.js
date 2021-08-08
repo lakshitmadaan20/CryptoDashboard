@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import { Avatar } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -37,8 +38,8 @@ const ExchangeData = ({ data }) => {
     const classes = useStyles();
 
     return (
-
-        <div>
+        <>
+           <Grid>
            <Card className={classes.root}>
            <CardHeader
             avatar={
@@ -52,7 +53,6 @@ const ExchangeData = ({ data }) => {
           <CardMedia
             className={classes.media}
             image={data.image}
-            // title={data.name}
           />
           <CardContent>
             <Typography variant="body1" color="textSecondary" component="p">
@@ -80,7 +80,8 @@ const ExchangeData = ({ data }) => {
             </Typography>
           </CardContent>
         </Card>
-        </div>
+           </Grid>
+        </>
     )
 }
 

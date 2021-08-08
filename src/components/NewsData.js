@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from 'moment';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -8,7 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -39,7 +39,9 @@ const NewsData = ({ news,i }) => {
     const classes = useStyles();
 
     return (
-        <Card className={classes.root}>
+        <>
+        <Grid>
+          <Card className={classes.root}>
           <CardHeader
             avatar={
               <Avatar aria-label="" className={classes.avatar}>
@@ -70,6 +72,8 @@ const NewsData = ({ news,i }) => {
             </Typography>
           </CardContent>
         </Card>
+        </Grid>
+        </>
       );
 }
 

@@ -46,7 +46,7 @@ const Home = () => {
 
     const showData = () => {
         return (
-            <div className="coin-app">
+            <div className="coin-app container">
                 <div className="coin-search">
                     <h1 className="coin-text">Top 50 Cryptocurrencies</h1>
                     <form>
@@ -59,8 +59,11 @@ const Home = () => {
                         />
                     </form>
                 </div>
-                {filteredCoins.map(coin => {
-                return <Coin
+                
+                <div className="row">
+                {filteredCoins.map(coin => (
+                <div className="col-4 mb-3">
+                   <Coin
                     key={coin.id}
                     id={coin.id}
                     name={coin.name}
@@ -70,8 +73,11 @@ const Home = () => {
                     price={coin.current_price}
                     priceChange={coin.price_change_percentage_24h}
                     marketcap={coin.market_cap}
-                />    
-                })}
+                    rank={coin.market_cap_rank}
+                />
+                </div>    
+                ))}
+                </div>
             </div>
         )
     }
