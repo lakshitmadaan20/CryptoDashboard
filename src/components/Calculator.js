@@ -30,6 +30,7 @@ const Calculator = () => {
         return (
             <>
                 <p>ether: {results.ether}</p>
+                <p>wei: {results.wei}</p>
                 <p>finney: {results.finney}</p>
                 <p>gether: {results.gether}</p>
                 <p>gwei: {results.gwei}</p>
@@ -56,6 +57,7 @@ const Calculator = () => {
         <select value={from} onChange={handleChange('from')} className="form-control">
             <option>Select the unit eg. Wei, Ether, etc.</option>
             <option>ether</option>
+            <option>wei</option>
             <option>finney</option>
             <option>gether</option>
             <option>gwei</option>
