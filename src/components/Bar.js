@@ -45,6 +45,15 @@ class Bar extends Component {
           onClick={this.handleItemClick}
         />
        </Link>
+
+      <Link to='/events'>
+       <Menu.Item
+          name='Events'
+          active={activeItem === 'Events'}
+          onClick={this.handleItemClick}
+        />
+       </Link>
+       
       </Menu>
       </div>
     )

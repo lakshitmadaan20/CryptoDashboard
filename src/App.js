@@ -8,6 +8,7 @@ import ShowCoin from "./components/ShowCoin";
 import Exchange from "./components/Exchange";
 import Calculator from "./components/Calculator";
 import Bar from './components/Bar'
+import Events from "./components/Events";
 
 const App = () => {
 
@@ -22,6 +23,7 @@ const App = () => {
             <Route path='/coindata/:id' exact component={ShowCoin} />
             <Route path='/exchanges' exact component={Exchange} />
             <Route path='/calculator' exact component={Calculator} />
+            <Route path='/events' exact component={Events} />
           </Switch>
        </Router>
     );
