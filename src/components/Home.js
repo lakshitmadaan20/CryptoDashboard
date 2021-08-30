@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Coin from './Coin';
-
+import {Grid} from '@material-ui/core'
 
 const Home = () => {
 
@@ -49,20 +49,20 @@ const Home = () => {
             <div className="coin-app container">
                 <div className="coin-search">
                     <h1 className="coin-text">Top 50 Cryptocurrencies</h1>
-                    <form>
+                   <div className="container">
+                   <form>
                         <input
                             type="text"
                             required
                             placeholder="Search Top 50 Crypto By Their Name..."
-                            className="coin-input"
+                            className="coin-input text-center"
                             onChange={handleChange}
                         />
                     </form>
+                   </div>
                 </div>
-                
-                <div className="row">
+                <Grid container spacing={2} style={{gap: '20px', justifyContent: 'center'}} >
                 {filteredCoins.map(coin => (
-                <div className="col-4 mb-3">
                    <Coin
                     key={coin.id}
                     id={coin.id}
@@ -74,11 +74,10 @@ const Home = () => {
                     priceChange={coin.price_change_percentage_24h}
                     marketcap={coin.market_cap}
                     rank={coin.market_cap_rank}
-                />
-                </div>    
+                /> 
                 ))}
+                 </Grid>  
                 </div>
-            </div>
         )
     }
 

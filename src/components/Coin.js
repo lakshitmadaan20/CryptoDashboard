@@ -9,7 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import { Avatar } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import Grid from '@material-ui/core/Grid';
+import {Grid} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -54,22 +54,22 @@ const Coin = ({ image, name, symbol, price, volume, priceChange, id, rank }) => 
             image={image}
           />
           <CardContent>
-            <Typography variant="body1" color="textSecondary" component="p">
+            <Typography className="black-6"  variant="body1" color="textSecondary" component="p">
              Symbol: {symbol ? symbol.toUpperCase() : "Not Available"}
             </Typography>
           </CardContent>
           <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography className="black-7"  variant="body2" color="textSecondary" component="p">
               Price: {price? price : "Not Available"}
             </Typography>
             </CardContent>
             <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography className="black-8"  variant="body2" color="textSecondary" component="p">
               Volume: ₹ {volume? volume.toLocaleString() : "Not Available"}
             </Typography>
             </CardContent>
             <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography className="black-9" variant="body2" color="textSecondary" component="p">
               Price Change: {priceChange < 0 ? (
                         <p className="coin-percent red"> {priceChange.toFixed(2)}%</p>
                     ) : (<p className="coin-percent green">+ {priceChange.toFixed(2)}%</p>)}

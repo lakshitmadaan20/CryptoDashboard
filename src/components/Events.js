@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import EventsData from './EventsData';
 import axios from 'axios'
+import {Grid} from '@material-ui/core'
 
 const Events = () => {
 
@@ -39,13 +40,11 @@ const Events = () => {
             <h1 className="mt-4 text-center">Top Upcoming Events</h1>
             <hr/>
             {loading ? isLoading() : 
-            <div className="row">
-                {eventsData.map((event,i) => (
-                    <div key={i} className="col-4 mb-3">
-                        <EventsData events={event} i={i} />
-                    </div>
-                ))}
-            </div>
+              <Grid container spacing={2} style={{gap: '20px', justifyContent: 'center'}} >
+                {eventsData.map((event,i) => {
+                        return <EventsData events={event} i={i} />
+                })}
+                </Grid>
             }
         </div>
    )

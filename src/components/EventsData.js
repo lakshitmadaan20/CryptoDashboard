@@ -39,7 +39,6 @@ const EventsData = ({ events,i }) => {
     const classes = useStyles();
 
     return (
-        <>
         <Grid>
           <Card className={classes.root}>
           <CardHeader
@@ -97,7 +96,6 @@ const EventsData = ({ events,i }) => {
           </CardContent>
         </Card>
         </Grid>
-        </>
       );
 }
 

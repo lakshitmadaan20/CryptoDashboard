@@ -7,7 +7,6 @@ import Navbar from "./components/Navbar";
 import ShowCoin from "./components/ShowCoin";
 import Exchange from "./components/Exchange";
 import Calculator from "./components/Calculator";
-import Bar from './components/Bar'
 import Events from "./components/Events";
 
 const App = () => {
@@ -16,7 +15,6 @@ const App = () => {
     <Router>
       <Navbar/>
       <br/>
-      <Bar/>
         <Switch>
             <Route path='/' exact component={Home} />
             <Route path='/news' exact component={News} />

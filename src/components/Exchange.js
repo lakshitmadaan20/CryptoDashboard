@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import ExchangeData from './ExchangeData'
+import {Grid} from '@material-ui/core'
 
 const Exchange = () => {
 
@@ -41,14 +42,11 @@ const Exchange = () => {
             <h1 className="mt-4 text-center">Top 50 Exchanges</h1>
             <hr/>
             {loading ? isLoading() : 
-            <div className="row">
-                {list.map((list, i) => (
-                    <div key={i} className="col-4 mb-3">
-                        <ExchangeData data={list} />
-                    </div>
-                ))}
-                
-            </div>}
+              <Grid container spacing={2} style={{gap:'20px', justifyContent: 'center'}}>
+                {list.map((list, i) => {
+                    return <ExchangeData data={list} />
+                })} 
+            </Grid>}
         </div>
     )
 
