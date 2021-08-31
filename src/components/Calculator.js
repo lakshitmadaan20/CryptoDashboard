@@ -29,17 +29,27 @@ const Calculator = () => {
     const result = () => {
         return (
             <>
-                <p>ether: {results.ether}</p>
-                <p>wei: {results.wei}</p>
-                <p>finney: {results.finney}</p>
-                <p>gether: {results.gether}</p>
-                <p>gwei: {results.gwei}</p>
-                <p>kether: {results.kether}</p>
-                <p>kwei: {results.kwei}</p> 
-                <p>mether: {results.mether} </p>
-                <p>mwei: {results.mwei}</p>
-                <p>szabo: {results.szabo}</p>
-                <p>tether: {results.tether}</p>
+                <p className="black-2 text-white btn">Ether: {results.wei}</p>
+                <br/>
+                <p className="black-2 text-white btn">Wei: {results.wei}</p>
+                <br/>
+                <p className="black-2 text-white btn">Finney: {results.finney}</p>
+                <br/>
+                <p className="black-2 text-white btn">Gether: {results.gether}</p>
+                <br/>
+                <p className="black-2 text-white btn">Gwei: {results.gwei}</p>
+                <br/>
+                <p className="black-2 text-white btn">Kether: {results.kether}</p>
+                <br/>
+                <p className="black-2 text-white btn">Kwei: {results.kwei}</p>
+                <br/>
+                <p className="black-2 text-white btn">Mether: {results.mether} </p>
+                <br/>
+                <p className="black-2 text-white btn">Mwei: {results.mwei}</p>
+                <br/>
+                <p className="black-2 text-white btn">Szabo: {results.szabo}</p>
+                <br/>
+                <p className="black-2 text-white btn">Tether: {results.tether}</p>
             </>
         )
     }
@@ -79,7 +89,7 @@ const Calculator = () => {
 
     return (
     <div class="container mt-4">
-    <h1 className="text-center">Ethereum unit converter</h1>
+    <h1 className="text-center  text-white">Ethereum Unit Converter</h1>
      <hr/>
      {showForm()}
      <br/>

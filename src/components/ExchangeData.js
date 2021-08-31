@@ -39,7 +39,7 @@ const ExchangeData = ({ data }) => {
 
     return (
         <>
-           <Grid>
+           <Grid style={{padding: "3px 12px",borderRadius:"10px"}}>
            <Card className={classes.root}>
            <CardHeader
             avatar={
@@ -55,28 +55,28 @@ const ExchangeData = ({ data }) => {
             image={data.image}
           />
           <CardContent>
-            <Typography className="black-5" variant="body1" color="textSecondary" component="p">
+            <Typography className="black-5 text-white" variant="body1" color="textSecondary" component="p">
              Country: {data.country ? data.country : "Not Available"}
             </Typography>
           </CardContent>
           <CardContent>
-            <Typography className="black-6" variant="body2" color="textSecondary" component="p">
+            <Typography className="black-6 text-white" variant="body2" color="textSecondary" component="p">
               Established In: {data.year_established? data.year_established : "Not Available"}
             </Typography>
             </CardContent>
             <CardContent>
-            <Typography className="black-7" variant="body2" color="textSecondary" component="p">
+            <Typography className="black-7 text-white" variant="body2" color="textSecondary" component="p">
               Trade Volume: ₹ {data.trade_volume_24h_btc? data.trade_volume_24h_btc.toLocaleString() : "Not Available"}
             </Typography>
             </CardContent>
             <CardContent>
-            <Typography className="black-8" variant="body2" color="textSecondary" component="p">
+            <Typography className="black-8 text-white" variant="body2" color="textSecondary" component="p">
               Normalized Trade Volume: ₹ {data.trade_volume_24h_btc_normalized? data.trade_volume_24h_btc_normalized.toLocaleString() : "Not Available"}
             </Typography>
             </CardContent>
           <CardContent>
             <Typography className="text-center">
-                <a href={data.url} className="btn btn-success">View Source</a>
+                <a  style={{padding: "3px 12px",borderRadius:"10px"}}  href={data.url} className="btn btn-outline-success">View Source</a>
             </Typography>
           </CardContent>
         </Card>

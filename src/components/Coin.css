@@ -1,9 +1,4 @@
-/* .coin-container {
-    display: flex;
-    justify-content: center;
-  } */
-  
-  .coin-row {
+.coin-row {
     display: flex;
     flex-direction: row;
     justify-content: start;

@@ -37,7 +37,7 @@ const Events = () => {
 
     return (
         <div className="container">
-            <h1 className="mt-4 text-center">Top Upcoming Events</h1>
+            <h1 className="mt-4 text-center  text-white">Top Upcoming Events</h1>
             <hr/>
             {loading ? isLoading() : 
               <Grid container spacing={2} style={{gap: '20px', justifyContent: 'center'}} >

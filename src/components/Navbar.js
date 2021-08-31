@@ -14,11 +14,11 @@ function Navbar() {
       <IconContext.Provider value={{ color: '#fff' }}>
         <nav className='navbar'>
           <div className='navbar-container container'>
-            <Link to='/' className='navbar-logo mt-2'onClick={closeMobileMenu}>
+            <Link to='/' className='navbar-logo'onClick={closeMobileMenu}>
              CryptoDashboard
             </Link>
             <div className='menu-icon' onClick={handleClick}>
-              {click ? <FaTimes /> : <FaAlignRight className="bg-primary" />}
+              {click ? <FaTimes /> : <FaAlignRight className="bg-primary"/>}
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
               <li className='nav-item'>

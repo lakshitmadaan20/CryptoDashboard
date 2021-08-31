@@ -48,7 +48,7 @@ const Home = () => {
         return (
             <div className="coin-app container">
                 <div className="coin-search">
-                    <h1 className="coin-text">Top 50 Cryptocurrencies</h1>
+                   <h1 className="coin-text text-white">Top 50 Cryptocurrencies</h1>
                    <div className="container">
                    <form>
                         <input

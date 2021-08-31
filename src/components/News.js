@@ -38,7 +38,7 @@ const News = () => {
 
     return (
         <div className="container">
-            <h1 className="mt-4 text-center">Top 50 Latest News</h1>
+            <h1 className="mt-4 text-center text-white">Top 50 Latest News</h1>
             <hr/>
             {loading ? isLoading() : 
            <Grid container spacing={2} style={{gap: '20px', justifyContent: 'center'}} >

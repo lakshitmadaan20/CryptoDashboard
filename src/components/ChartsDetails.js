@@ -55,8 +55,8 @@ const ChartsDetails = ({ data }) => {
           <p
             className={
               detail.price_change_24h < 0
-                ? "text-danger my-0"
-                : "text-success my-0"
+                ? "text-white black-3 btn"
+                : "text-white black-4 btn"
             }
           >
             {detail.price_change_percentage_24h ? detail.price_change_percentage_24h.toFixed(2) : "Not Available"}%
@@ -67,12 +67,11 @@ const ChartsDetails = ({ data }) => {
   };
 
       return (
-        <div className="border mt-2 rounded p-3">
+        <div style={{background:"white"}} className="border mt-2 rounded p-3">
           <div>{renderPrice()}</div>
           <div class="chart-container">
             <canvas ref={chartRef} id="myChart" width={300} height={300}></canvas>
           </div>
-
     
           <div className="chart-button mt-1">
             <button

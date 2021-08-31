@@ -5,7 +5,7 @@ const CoinDetails = ({ data }) => {
   const renderData = () => {
     if (data) {
       return (
-        <div className="mt-4 p-2 rounded border row">
+        <div style={{background:"white"}} className="mt-4 p-2 rounded border row">
           <div className="col-sm">
             <div className="d-flex flex-column">
               <span className="text-muted coin-data-category">Market Cap</span>

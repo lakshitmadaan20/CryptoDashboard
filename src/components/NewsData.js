@@ -41,7 +41,7 @@ const NewsData = ({ news,i }) => {
     return (
         <>
         <Grid>
-          <Card className={classes.root}>
+          <Card style={{padding: "3px 12px",borderRadius:"10px"}} className={classes.root}>
           <CardHeader
             avatar={
               <Avatar aria-label="" className={classes.avatar}>
@@ -57,18 +57,18 @@ const NewsData = ({ news,i }) => {
             title={news.source}
           />
           <CardContent>
-            <Typography className="black-5"  variant="body1" color="textSecondary" component="p">
+            <Typography className="black-5 text-white" variant="body1" color="textSecondary" component="p">
              Description: {news.body ? news.body.substring(0, 200): "Not Available"}
             </Typography>
           </CardContent>
           <CardContent>
-            <Typography className="black-6"  variant="body2" color="textSecondary" component="p">
+            <Typography className="black-6 text-white" variant="body2" color="textSecondary" component="p">
               Category: {news.categories}
             </Typography>
             </CardContent>
           <CardContent>
             <Typography className="text-center">
-                <a href={news.url} className="btn btn-primary">View News</a>
+                <a  style={{padding: "3px 12px",borderRadius:"10px"}}  href={news.url} className="btn btn-outline-primary">View News</a>
             </Typography>
           </CardContent>
         </Card>

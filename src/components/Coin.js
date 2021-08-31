@@ -39,7 +39,7 @@ const Coin = ({ image, name, symbol, price, volume, priceChange, id, rank }) => 
     return (
         <>
           <Grid>
-          <Card className={classes.root}>
+          <Card className={classes.root} style={{padding: "3px 12px",borderRadius:"10px"}}>
            <CardHeader
             avatar={
               <Avatar aria-label="" className={classes.avatar}>
@@ -54,30 +54,35 @@ const Coin = ({ image, name, symbol, price, volume, priceChange, id, rank }) => 
             image={image}
           />
           <CardContent>
-            <Typography className="black-5"  variant="body1" color="textSecondary" component="p">
+            <Typography className="black-5 text-white"  variant="body1" color="textSecondary" component="p">
              Symbol: {symbol ? symbol.toUpperCase() : "Not Available"}
             </Typography>
           </CardContent>
           <CardContent>
-            <Typography className="black-6"  variant="body2" color="textSecondary" component="p">
-              Price: {price? price : "Not Available"}
+            <Typography className="black-6 text-white" variant="body2" color="textSecondary" component="p">
+              Price: ₹ {price? price.toLocaleString() : "Not Available"}
             </Typography>
             </CardContent>
             <CardContent>
-            <Typography className="black-7"  variant="body2" color="textSecondary" component="p">
+            <Typography className="black-7 text-white"  variant="body2" color="textSecondary" component="p">
               Volume: ₹ {volume? volume.toLocaleString() : "Not Available"}
             </Typography>
             </CardContent>
+            {/* <CardContent>
+            <Typography className="black-5 text-white" variant="body2" color="textSecondary" component="p">
+              Price Change: 
+            </Typography>
+            </CardContent> */}
             <CardContent>
-            <Typography className="black-8" variant="body2" color="textSecondary" component="p">
-              Price Change: {priceChange < 0 ? (
-                        <p className="coin-percent red"> {priceChange.toFixed(2)}%</p>
-                    ) : (<p className="coin-percent green">+ {priceChange.toFixed(2)}%</p>)}
+            <Typography variant="body2 text-center" color="textSecondary" component="p">
+              {priceChange < 0 ? (
+                        <p className="coin-percent text-center text-white black-3"> {priceChange.toFixed(2)}%</p>
+                    ) : (<p className="coin-percent text-center text-white black-4">+ {priceChange.toFixed(2)}%</p>)}
             </Typography>
             </CardContent>
           <CardContent>
             <Typography className="text-center">
-             <Link className="btn btn-outline-primary" to={`/coindata/${id}`}>View Data</Link>
+             <Link style={{padding: "3px 12px",borderRadius:"10px"}} className="btn btn-outline-primary" to={`/coindata/${id}`}>View Data</Link>
             </Typography>
           </CardContent>
         </Card>
