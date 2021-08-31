@@ -6,7 +6,7 @@ body{
   padding: 0;
   font-family: sans-serif;
   color: black;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 
@@ -72,21 +72,33 @@ body{
 
 .black-10 {
     background: #f2f2f2;
+    padding: 3px 12px;
+    border-radius: 10px;
 }
 .black-9 {
     background: #e6e6e6;
+    padding: 3px 12px;
+    border-radius: 10px;
 }
 .black-8 {
     background: #d9d9d9;
+    padding: 3px 12px;
+    border-radius: 10px;
 }
 .black-7 {
     background: #cccccc;
+    padding: 3px 12px;
+    border-radius: 10px;
 }
 .black-6 {
     background: #bfbfbf;
+    padding: 3px 12px;
+    border-radius: 10px;
 }
 .black-5 {
     background: #b3b3b3;
+    padding: 3px 12px;
+    border-radius: 10px;
 }
 .news-img {
   min-height: 100px;

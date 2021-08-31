@@ -55,37 +55,37 @@ const EventsData = ({ events,i }) => {
             image={events.screenshot}
           />
           <CardContent>
-            <Typography variant="body1" color="textSecondary" component="p">
+            <Typography className="black-5" variant="body1" color="textSecondary" component="p">
              Description: {events.description ? events.description.substring(0,300) : "Not Available"}
             </Typography>
           </CardContent>
           <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography className="black-6" variant="body2" color="textSecondary" component="p">
               Organiser: {events.organizer ? events.organizer : "Not Available"}
             </Typography>
           </CardContent>
           <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography className="black-7"  variant="body2" color="textSecondary" component="p">
               Start Date: {events.start_date ? events.start_date : "Not Available"}
             </Typography>
           </CardContent>
           <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography className="black-8"  variant="body2" color="textSecondary" component="p">
               End Date: {events.end_date ? events.end_date : "Not Available"}
             </Typography>
           </CardContent>
           <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography className="black-9" variant="body2" color="textSecondary" component="p">
               City: {events.city ? events.city : "Not Available"}
             </Typography>
           </CardContent>
           <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography className="black-10"  variant="body2" color="textSecondary" component="p">
               Country: {events.country ? events.country : "Not Available"}
             </Typography>
           </CardContent>
           <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography className="black-10" variant="body2" color="textSecondary" component="p">
               Venue: {events.venue ? events.venue : "To Be Determined"}
             </Typography>
           </CardContent>

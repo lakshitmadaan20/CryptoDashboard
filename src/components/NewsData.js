@@ -57,12 +57,12 @@ const NewsData = ({ news,i }) => {
             title={news.source}
           />
           <CardContent>
-            <Typography className="black-6"  variant="body1" color="textSecondary" component="p">
+            <Typography className="black-5"  variant="body1" color="textSecondary" component="p">
              Description: {news.body ? news.body.substring(0, 200): "Not Available"}
             </Typography>
           </CardContent>
           <CardContent>
-            <Typography className="black-7"  variant="body2" color="textSecondary" component="p">
+            <Typography className="black-6"  variant="body2" color="textSecondary" component="p">
               Category: {news.categories}
             </Typography>
             </CardContent>

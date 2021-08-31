@@ -74,7 +74,7 @@ const Home = () => {
                     priceChange={coin.price_change_percentage_24h}
                     marketcap={coin.market_cap}
                     rank={coin.market_cap_rank}
-                /> 
+                />
                 ))}
                  </Grid>  
                 </div>

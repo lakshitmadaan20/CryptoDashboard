@@ -54,22 +54,22 @@ const Coin = ({ image, name, symbol, price, volume, priceChange, id, rank }) => 
             image={image}
           />
           <CardContent>
-            <Typography className="black-6"  variant="body1" color="textSecondary" component="p">
+            <Typography className="black-5"  variant="body1" color="textSecondary" component="p">
              Symbol: {symbol ? symbol.toUpperCase() : "Not Available"}
             </Typography>
           </CardContent>
           <CardContent>
-            <Typography className="black-7"  variant="body2" color="textSecondary" component="p">
+            <Typography className="black-6"  variant="body2" color="textSecondary" component="p">
               Price: {price? price : "Not Available"}
             </Typography>
             </CardContent>
             <CardContent>
-            <Typography className="black-8"  variant="body2" color="textSecondary" component="p">
+            <Typography className="black-7"  variant="body2" color="textSecondary" component="p">
               Volume: ₹ {volume? volume.toLocaleString() : "Not Available"}
             </Typography>
             </CardContent>
             <CardContent>
-            <Typography className="black-9" variant="body2" color="textSecondary" component="p">
+            <Typography className="black-8" variant="body2" color="textSecondary" component="p">
               Price Change: {priceChange < 0 ? (
                         <p className="coin-percent red"> {priceChange.toFixed(2)}%</p>
                     ) : (<p className="coin-percent green">+ {priceChange.toFixed(2)}%</p>)}
@@ -81,27 +81,8 @@ const Coin = ({ image, name, symbol, price, volume, priceChange, id, rank }) => 
             </Typography>
           </CardContent>
         </Card>
-          </Grid>
+        </Grid>
         </>
-        // <div className="container">
-        //     <div className="coin-row">
-        //         <div className="coin">
-        //             <img src={image} alt="crypto" />
-        //             <h1>{name}</h1>
-        //             <p className="coin-symbol">{symbol}</p>
-        //         </div>
-        //         <div className="coin-data">
-        //             <p className="coin-price">Price: ₹{price.toLocaleString()}</p>
-        //             <p className="coin-volume">volume: ₹{volume.toLocaleString()}</p>
-        //             {priceChange < 0 ? (
-        //                 <p className="coin-percent red"> {priceChange.toFixed(2)}%</p>
-        //             ) : (<p className="coin-percent green">+ {priceChange.toFixed(2)}%</p>)}
-        //             <p className="coin-price">
-        //                 <Link className="btn btn-outline-primary" to={`/coindata/${id}`}>View Data</Link>   
-        //             </p>
-        //         </div>
-        //     </div>
-        // </div>
     )
 }
 
