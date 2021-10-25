@@ -53,7 +53,7 @@ const Crypto = () => {
                         <input
                             type="text"
                             required
-                            placeholder="Search..."
+                            placeholder="Search Crypto..."
                             className="coin-input text-center"
                             onChange={handleChange}
                         />
