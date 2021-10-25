@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import Chartjs from "chart.js";
 import { historyOptions } from "./ChartConfig";
-
+import { Chart } from "react-google-charts";
 
 const ChartsDetails = ({ data }) => {
     
@@ -9,7 +9,6 @@ const ChartsDetails = ({ data }) => {
     const { day, week, year, detail } = data;
     const [timeFormat, setTimeFormat] = useState("24h");
 
-   
     const determineTimeFormat = () => {
         switch (timeFormat) {
           case "24h":
@@ -25,8 +24,8 @@ const ChartsDetails = ({ data }) => {
 
     
   useEffect(() => {
+    console.log()
         if (chartRef && chartRef.current && detail) {
-          console.log("yeah");
           const chartInstance = new Chartjs(chartRef.current, {
             type: "line",
             data: {
@@ -44,6 +43,12 @@ const ChartsDetails = ({ data }) => {
               ...historyOptions,
             },
           });
+      // const google = window.google;
+      // const data = google.visualization.arrayToDataTable([
+      //    [determineTimeFormat(), detail]
+      //   // Treat first row as data as well.
+      // ], true);
+      // console.log(data)
        }
       });
     
@@ -71,6 +76,23 @@ const ChartsDetails = ({ data }) => {
           <div>{renderPrice()}</div>
           <div class="chart-container">
             <canvas ref={chartRef} id="myChart" width={300} height={300}></canvas>
+            {/* <Chart
+              width={'100%'}
+              height={350}
+              chartType="CandlestickChart"
+              loader={<div>Loading Chart</div>}
+              data={[
+                determineTimeFormat(), data.day
+              ]}
+              options={{
+                legend: 'none',
+                bar: { groupWidth: '100%' }, // Remove space between bars.
+                candlestick: {
+                  fallingColor: { strokeWidth: 0, fill: '#a52714' }, // red
+                  risingColor: { strokeWidth: 0, fill: '#0f9d58' }, // green
+               } ,
+              }}
+              /> */}
           </div>
     
           <div className="chart-button mt-1">

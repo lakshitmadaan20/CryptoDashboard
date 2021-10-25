@@ -40,7 +40,7 @@ const Events = () => {
             <h1 className="mt-4 text-center  text-white">Top Upcoming Events</h1>
             <hr/>
             {loading ? isLoading() : 
-              <Grid container spacing={2} style={{gap: '20px', justifyContent: 'center'}} >
+              <Grid container spacing={2} style={{gap: '20px', marginBottom:'20px', justifyContent: 'center'}} >
                 {eventsData.map((event,i) => {
                         return <EventsData events={event} i={i} />
                 })}

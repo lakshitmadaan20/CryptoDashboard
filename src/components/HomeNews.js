@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import {Grid} from '@material-ui/core'
+import {Link} from 'react-router-dom'
 import NewsData from './NewsData';
 const cc = require("cryptocompare")
 cc.setApiKey("b1ea693d79e6f8b6d914d2a8a4afd0916244510823d8628147e8b74fd068b1e7")
 
-const News = () => {
+const HomeNews = () => {
 
     const [newsData, setNewsData] = useState([]);
     const [loading, setLoading] = useState(false)
@@ -13,8 +14,9 @@ const News = () => {
         setLoading(true)
         cc.newsList('EN')
         .then(newsList => {
-            console.log(newsList)
-            setNewsData(newsList)
+            const data = newsList.splice(0, Math.ceil(newsList.length / 10));
+            console.log(data)
+            setNewsData(data)
             setLoading(false)
         })
         .catch(console.error)
@@ -38,10 +40,11 @@ const News = () => {
 
     return (
         <div className="container">
-            <h1 className="mt-4 text-center text-white">Top 50 Latest News</h1>
-            <hr/>
+            <Link to='/news' className="nav-link" >
+             <h2 className="text-left">Latest News</h2>
+            </Link>
             {loading ? isLoading() : 
-           <Grid container spacing={2} style={{gap: '20px', marginBottom:'20px', justifyContent: 'center'}} >
+           <Grid container spacing={2} style={{gap: '20px', marginBottom: '20px', justifyContent: 'center'}} >
                 {newsData.map((news, i) => {
                     return <NewsData news={news} i={i} />
                 })}
@@ -51,4 +54,4 @@ const News = () => {
    )
 }
 
-export default News;
+export default HomeNews;

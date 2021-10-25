@@ -54,11 +54,7 @@ const EventsData = ({ events,i }) => {
             className={classes.media}
             image={events.screenshot}
           />
-          <CardContent>
-            <Typography className="black-5  text-white" variant="body1" color="textSecondary" component="p">
-             Description: {events.description ? events.description.substring(0,300) : "Not Available"}
-            </Typography>
-          </CardContent>
+          
           <CardContent>
             <Typography className="black-6  text-white" variant="body2" color="textSecondary" component="p">
               Organiser: {events.organizer ? events.organizer : "Not Available"}

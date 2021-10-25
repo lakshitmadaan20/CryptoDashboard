@@ -12,38 +12,56 @@ import { red } from '@material-ui/core/colors';
 import {Grid} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-      maxWidth: 345,
-    },
-    media: {
-      height: 0,
-      paddingTop: '56.5%', // 16:9
-    },
-    expand: {
-      transform: 'rotate(0deg)',
-      marginLeft: 'auto',
-      transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-      }),
-    },
-    expandOpen: {
-      transform: 'rotate(180deg)',
-    },
-    avatar: {
-      backgroundColor: red[500],
-    },
-  }));
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 0,
+    paddingTop: '56.5%', // 16:9
+  },
+  expand: {
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: 'rotate(180deg)',
+  },
+  avatar: {
+    backgroundColor: red[500],
+  },
+}));
 
 const Coin = ({ image, name, symbol, price, volume, priceChange, id, rank }) => {
     const classes = useStyles();
+    function convertToInternationalCurrencySystem (labelValue) {
+
+      // Nine Zeroes for Billions
+      return Math.abs(Number(labelValue)) >= 1.0e+9
+  
+      ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(2) + "B"
+      // Six Zeroes for Millions 
+      : Math.abs(Number(labelValue)) >= 1.0e+6
+  
+      ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(2) + "M"
+      // Three Zeroes for Thousands
+      : Math.abs(Number(labelValue)) >= 1.0e+3
+  
+      ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed(2) + "K"
+  
+      : Math.abs(Number(labelValue));
+  
+    }
     return (
-        <>
-          <Grid>
-          <Card className={classes.root} style={{padding: "3px 12px",borderRadius:"10px"}}>
+        <div style={{width: '260px'}}>
+           <Grid>
+           <Card style={{padding: "3px 12px",borderRadius:"20px"}} className={classes.root}>
            <CardHeader
             avatar={
               <Avatar aria-label="" className={classes.avatar}>
-                 {rank}
+                 {symbol}
               </Avatar>
             }
             title={name}
@@ -60,12 +78,12 @@ const Coin = ({ image, name, symbol, price, volume, priceChange, id, rank }) => 
           </CardContent>
           <CardContent>
             <Typography className="black-6 text-white" variant="body2" color="textSecondary" component="p">
-              Price: ₹ {price? price.toLocaleString() : "Not Available"}
+              Price: ₹ {price? convertToInternationalCurrencySystem(price) : "Not Available"}
             </Typography>
             </CardContent>
             <CardContent>
             <Typography className="black-7 text-white"  variant="body2" color="textSecondary" component="p">
-              Volume: ₹ {volume? volume.toLocaleString() : "Not Available"}
+              Volume: ₹ {volume? convertToInternationalCurrencySystem(volume) : "Not Available"}
             </Typography>
             </CardContent>
             {/* <CardContent>
@@ -87,7 +105,7 @@ const Coin = ({ image, name, symbol, price, volume, priceChange, id, rank }) => 
           </CardContent>
         </Card>
         </Grid>
-        </>
+        </div>
     )
 }
 

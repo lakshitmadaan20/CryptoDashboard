@@ -12,7 +12,8 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      maxWidth: 345,
+      maxWidth: '98%',
+      width: 345,
     },
     media: {
       height: 0,
@@ -43,6 +44,7 @@ const NewsData = ({ news,i }) => {
         <Grid>
           <Card style={{padding: "3px 12px",borderRadius:"10px"}} className={classes.root}>
           <CardHeader
+            style={{height: '90px'}}
             avatar={
               <Avatar aria-label="" className={classes.avatar}>
                  {i}
@@ -56,19 +58,19 @@ const NewsData = ({ news,i }) => {
             image={news.imageurl}
             title={news.source}
           />
-          <CardContent>
+          {/* <CardContent>
             <Typography className="black-5 text-white" variant="body1" color="textSecondary" component="p">
-             Description: {news.body ? news.body.substring(0, 200): "Not Available"}
+             Description: {news.body ? news.body : "Not Available"}
             </Typography>
-          </CardContent>
+          </CardContent> */}
           <CardContent>
             <Typography className="black-6 text-white" variant="body2" color="textSecondary" component="p">
-              Category: {news.categories}
+              Category: <br></br>{news.categories}
             </Typography>
             </CardContent>
           <CardContent>
             <Typography className="text-center">
-                <a  style={{padding: "3px 12px",borderRadius:"10px"}}  href={news.url} className="btn btn-outline-primary">View News</a>
+                <a style={{padding: "3px 12px",borderRadius:"10px"}}  href={news.url} className="btn btn-outline-primary">View News</a>
             </Typography>
           </CardContent>
         </Card>

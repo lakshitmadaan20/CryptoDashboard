@@ -1,12 +1,14 @@
 import React from "react";
 import News from './components/News'
-import Home from './components/Home'
+import Crypto from './components/Crypto'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navbar from "./components/Navbar";
 import ShowCoin from "./components/ShowCoin";
 import Exchange from "./components/Exchange";
 import Calculator from "./components/Calculator";
 import Events from "./components/Events";
+import Home from './components/Home'
+import Footer from "./components/Footer";
 
 const App = () => {
 
@@ -15,13 +17,15 @@ const App = () => {
       <Navbar/>
       <br/>
         <Switch>
-            <Route path='/' exact component={Home} />
-            <Route path='/news' exact component={News} />
-            <Route path='/coindata/:id' exact component={ShowCoin} />
-            <Route path='/exchanges' exact component={Exchange} />
-            <Route path='/calculator' exact component={Calculator} />
-            <Route path='/events' exact component={Events} />
+            <Route exact path='/' component={Home} />
+            <Route exact path='/crypto' component={Crypto}/>
+            <Route  exact path='/news' component={News} />
+            <Route  exact path='/coindata/:id'component={ShowCoin} />
+            <Route  exact path='/exchanges' component={Exchange} />
+            <Route  exact path='/calculator' component={Calculator} />
+            <Route  exact path='/events' component={Events} />
           </Switch>
+          <Footer/>
        </Router>
     );
   }

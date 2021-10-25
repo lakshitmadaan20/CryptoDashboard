@@ -28,6 +28,15 @@ function Navbar() {
               </li>
               <li className='nav-item'>
                 <Link
+                  to='/crypto'
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+                >
+                  Crypto
+                </Link>
+              </li>
+              <li className='nav-item'>
+                <Link
                   to='/news'
                   className='nav-links'
                   onClick={closeMobileMenu}
