@@ -43,20 +43,20 @@ const NewsData = ({ news,i }) => {
         <>
         <Grid>
           <Card style={{padding: "3px 12px",borderRadius:"10px"}} className={classes.root}>
-          <CardHeader
-            style={{height: '90px'}}
-            avatar={
-              <Avatar aria-label="" className={classes.avatar}>
-                 {i}
-              </Avatar>
-            }
-            title={news.title}
-            subheader={date}
-          />
           <CardMedia
             className={classes.media}
             image={news.imageurl}
             title={news.source}
+          />
+          <CardHeader
+            style={{height: '90px'}}
+            avatar={
+              <Avatar aria-label="" className={classes.avatar}>
+                  <img style={{height:"110%", width:"110%"}} src={news.imageurl} alt=""/>
+              </Avatar>
+            }
+            title={news.title}
+            subheader={date}
           />
           {/* <CardContent>
             <Typography className="black-5 text-white" variant="body1" color="textSecondary" component="p">

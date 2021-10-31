@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import convert from 'ether-converter'
-import { data } from 'browserslist';
 
 
 const Calculator = () => {

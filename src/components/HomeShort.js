@@ -8,10 +8,10 @@ const HomeShort = () => {
 
     const [coinData, setCoinData] = useState([]);
     const [loading, setLoading] = useState(false)
-    const [search, setSearch] = useState('')
+    // const [search, setSearch] = useState('')
 
     const getData = async() => {
-        const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=4&page=1&sparkline=true"
+        const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=8&page=1&sparkline=true"
         setLoading(true)
         await axios.get(url)
         .then(res => {
@@ -39,9 +39,11 @@ const HomeShort = () => {
 
    return (
     <div className="container">
-    <Link className="nav-link" to='/crypto'>
-     <h2 className="text-left">Latest Cryptos</h2>
+     <h2 className="text-center text-white">Latest Cryptos</h2>
+     <Link to='/crypto' className="nav-link">
+        <p className="text-center">View All</p>
     </Link>
+    <br/>
     {loading ? isLoading() : 
       <Grid container spacing={2} style={{gap:'20px', justifyContent: 'center'}}>
         {coinData.map((coin, i) => {

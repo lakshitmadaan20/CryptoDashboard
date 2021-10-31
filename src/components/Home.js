@@ -5,10 +5,11 @@ import HomeNews from './HomeNews'
 
 const Home = () => {
     return (
-        <div>
+        <div div className="container">
             {/* <CarouselHomepage/> */}
             <HomeShort/>
             <br/>
+            <hr/>
              <HomeNews/>
         </div>
     )

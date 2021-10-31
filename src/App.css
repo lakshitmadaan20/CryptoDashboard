@@ -164,7 +164,7 @@ a{
 }
 
 .footer {
-  background-color: #001529;
+  /* background-color: orange; */
   display: flex;
   flex-direction: column;
   padding: 20px;

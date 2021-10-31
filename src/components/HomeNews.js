@@ -14,7 +14,7 @@ const HomeNews = () => {
         setLoading(true)
         cc.newsList('EN')
         .then(newsList => {
-            const data = newsList.splice(0, Math.ceil(newsList.length / 10));
+            const data = newsList.splice(0, Math.ceil(newsList.length / 6));
             console.log(data)
             setNewsData(data)
             setLoading(false)
@@ -40,9 +40,11 @@ const HomeNews = () => {
 
     return (
         <div className="container">
-            <Link to='/news' className="nav-link" >
-             <h2 className="text-left">Latest News</h2>
+            <h2 className="text-center text-white">Latest News</h2>
+            <Link to='/news' className="nav-link">
+                <p className="text-center">View All</p>
             </Link>
+            <br/>
             {loading ? isLoading() : 
            <Grid container spacing={2} style={{gap: '20px', marginBottom: '20px', justifyContent: 'center'}} >
                 {newsData.map((news, i) => {

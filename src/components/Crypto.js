@@ -10,7 +10,7 @@ const Crypto = () => {
     const [search, setSearch] = useState('')
 
     const getData = async() => {
-        const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=50&page=1&sparkline=true"
+        const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=52&page=1&sparkline=true"
         setLoading(true)
         await axios.get(url)
         .then(res => {
@@ -48,7 +48,7 @@ const Crypto = () => {
         return (
             <div className="coin-app container">
                 <div className="coin-search">
-                   <h1 className="coin-text text-white">Top 50 Cryptocurrencies</h1>
+                   <h1 className="coin-text text-white">Top Cryptocurrencies</h1>
                    <form>
                         <input
                             type="text"

@@ -8,7 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import { Avatar } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
+import {white,red, grey} from '@material-ui/core/colors';
 import {Grid} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     transform: 'rotate(180deg)',
   },
   avatar: {
-    backgroundColor: red[500],
+    backgroundColor: grey[50],
   },
 }));
 
@@ -60,8 +60,9 @@ const Coin = ({ image, name, symbol, price, volume, priceChange, id, rank }) => 
            <Card style={{padding: "3px 12px",borderRadius:"20px"}} className={classes.root}>
            <CardHeader
             avatar={
-              <Avatar aria-label="" className={classes.avatar}>
-                 {symbol}
+              <Avatar aria-label="" className={classes.avatar} >
+                 {/* {symbol.toUpperCase()} */}
+                 <img style={{height:"110%", width:"110%"}} src={image} alt=""/>
               </Avatar>
             }
             title={name}
