@@ -44,7 +44,7 @@ const NewsData = ({ news,i }) => {
         <Grid>
           <Card style={{padding: "3px 12px",borderRadius:"10px"}} className={classes.root}>
           <CardHeader
-            style={{height: '90px'}}
+            style={{height: '100px'}}
             avatar={
               <Avatar aria-label="" className={classes.avatar}>
                   <img style={{height:"110%", width:"110%"}} src={news.imageurl} alt=""/>

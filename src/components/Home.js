@@ -1,12 +1,14 @@
 import React from 'react'
 import HomeShort from './HomeShort'
 import HomeNews from './HomeNews'
-// import CarouselHomepage from "./CarouselHomepage";
+// import GlobalData from './GlobalData'
 
 const Home = () => {
     return (
         <div div className="container">
-            {/* <CarouselHomepage/> */}
+            {/* <GlobalData/> */}
+            <br/>
+            <hr/>
             <HomeShort/>
             <br/>
             <hr/>
