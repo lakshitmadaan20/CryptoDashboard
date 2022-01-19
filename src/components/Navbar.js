@@ -57,7 +57,7 @@ function Navbar() {
                   Calculator
                 </Link>
               </li>
-              <li className='nav-item'>
+              {/* <li className='nav-item'>
                 <Link
                   to='/updates'
                   className='nav-links'
@@ -65,6 +65,15 @@ function Navbar() {
                 >
                   Updates
                 </Link>
+              </li> */}
+              <li className='nav-item'>
+                <a
+                  href='https://medium.com/@blockchainunmasked'
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+                >
+                  Blog
+                </a>
               </li>
             </ul>
           </div>

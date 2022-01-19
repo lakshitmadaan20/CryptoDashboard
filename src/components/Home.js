@@ -7,8 +7,8 @@ const Home = () => {
     return (
         <div div className="container">
             {/* <GlobalData/> */}
-            <br/>
-            <hr/>
+            {/* <br/>
+            <hr/> */}
             <HomeShort/>
             <br/>
             <hr/>
