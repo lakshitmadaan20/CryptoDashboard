@@ -40,17 +40,19 @@ const HomeNews = () => {
 
     return (
         <div className="container">
-            <h2 className="text-center text-white">Latest News</h2>
-            <Link to='/news' className="nav-link">
-                <p className="text-center">View All</p>
-            </Link>
             <br/>
             {loading ? isLoading() : 
-           <Grid container spacing={2} style={{gap: '20px', marginBottom: '20px', justifyContent: 'center'}} >
+            <>
+            <h2 className="text-center text-white">Latest News</h2>
+            <Link to='/news' className="nav-link">
+            <p className="text-center">View All</p>
+            </Link>
+            <Grid container spacing={2} style={{gap: '20px', marginBottom: '20px', justifyContent: 'center'}} >
                 {newsData.map((news, i) => {
                     return <NewsData news={news} i={i} />
                 })}
             </Grid>
+            </>
             }
             </div>
    )

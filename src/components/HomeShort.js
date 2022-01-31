@@ -39,12 +39,13 @@ const HomeShort = () => {
 
    return (
     <div className="container">
-     <h2 className="text-center text-white">Latest Cryptos</h2>
-     <Link to='/crypto' className="nav-link">
-        <p className="text-center">View All</p>
-    </Link>
     <br/>
     {loading ? isLoading() : 
+    <>
+    <h2 className="text-center text-white">Latest Cryptos</h2>
+    <Link to='/crypto' className="nav-link">
+    <p className="text-center">View All</p>
+    </Link>
       <Grid container spacing={2} style={{gap:'20px', justifyContent: 'center'}}>
         {coinData.map((coin, i) => {
             return <Coin
@@ -60,7 +61,9 @@ const HomeShort = () => {
             rank={coin.market_cap_rank}
         />
         })} 
-    </Grid>}
+    </Grid>
+    </>
+    }
 </div>
    )
 }

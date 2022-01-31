@@ -8,6 +8,7 @@ export default function Footer() {
         <Typography.Title level={5} style={{ color: 'white', textAlign: 'center' }}>Copyright © 2021
           All Rights Reserved.
         </Typography.Title>
+        <a className='nav-link' href="https://sanketagarwal.substack.com/p/coming-soon?r=xs80s&utm_campaign=post&utm_medium=web">Subscribe To NewsLetter</a>
       </div>
     )
 }

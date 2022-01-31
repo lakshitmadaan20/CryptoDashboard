@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './Coin.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -8,7 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import { Avatar } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
-import {white,red, grey} from '@material-ui/core/colors';
+import {grey} from '@material-ui/core/colors';
 import {Grid} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -61,7 +60,6 @@ const Coin = ({ image, name, symbol, price, volume, priceChange, id, rank }) => 
            <CardHeader
             avatar={
               <Avatar aria-label="" className={classes.avatar} >
-                 {/* {symbol.toUpperCase()} */}
                  <img style={{height:"110%", width:"110%"}} src={image} alt=""/>
               </Avatar>
             }
@@ -87,11 +85,6 @@ const Coin = ({ image, name, symbol, price, volume, priceChange, id, rank }) => 
               Volume: ₹ {volume? convertToInternationalCurrencySystem(volume) : "Not Available"}
             </Typography>
             </CardContent>
-            {/* <CardContent>
-            <Typography className="black-5 text-white" variant="body2" color="textSecondary" component="p">
-              Price Change: 
-            </Typography>
-            </CardContent> */}
             <CardContent>
             <Typography variant="body2 text-center" color="textSecondary" component="p">
               {priceChange < 0 ? (

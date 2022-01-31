@@ -15,10 +15,10 @@ function Navbar() {
         <nav className='navbar'>
           <div className='navbar-container container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-               Crypto Dash
+               CryptoDash
             </Link>
             <div className='menu-icon' onClick={handleClick}>
-              {click ? <FaTimes /> : <FaBars className="bg-primary"/>}
+              {click ? <FaTimes className="bg-primary" /> : <FaBars className="bg-primary"/>}
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
               <li className='nav-item'>
@@ -57,15 +57,15 @@ function Navbar() {
                   Calculator
                 </Link>
               </li>
-              {/* <li className='nav-item'>
+              <li className='nav-item'>
                 <Link
-                  to='/updates'
+                  to='/resources'
                   className='nav-links'
                   onClick={closeMobileMenu}
                 >
-                  Updates
+                  Resources
                 </Link>
-              </li> */}
+              </li>
               <li className='nav-item'>
                 <a
                   href='https://medium.com/@blockchainunmasked'

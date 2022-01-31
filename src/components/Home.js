@@ -6,9 +6,6 @@ import HomeNews from './HomeNews'
 const Home = () => {
     return (
         <div div className="container">
-            {/* <GlobalData/> */}
-            {/* <br/>
-            <hr/> */}
             <HomeShort/>
             <br/>
             <hr/>
