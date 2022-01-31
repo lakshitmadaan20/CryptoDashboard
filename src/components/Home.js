@@ -1,15 +1,16 @@
 import React from 'react'
 import HomeShort from './HomeShort'
 import HomeNews from './HomeNews'
-// import GlobalData from './GlobalData'
+import Landing from './Landing'
 
 const Home = () => {
     return (
         <div div className="container">
+            <Landing/>
             <HomeShort/>
             <br/>
             <hr/>
-             <HomeNews/>
+            <HomeNews/>
         </div>
     )
 }
